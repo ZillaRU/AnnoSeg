@@ -8,7 +8,7 @@
 
 以windows操作系统为例，打开`控制面板\网络和 Internet\网络和共享中心`，点击`以太网2——>属性`，手动设置IP地址为192.168.150.2，如图所示。连接成功后，AirBox的IP即是192.168.150.1。
 
-![image-20231017142503889](img/1.png)
+![image-20231017142503889](assets/1.png)
 
 
 然后把网线插到LAN口AirBox就可以接入互联网了。
@@ -17,7 +17,7 @@
 
 打开ssh远程连接工具。以mobaxterm为例：点击`会话——>SSH`，远程主机填192.168.150.1，其他选项默认，点击”OK“。
 
-![image-20231017143107426](img/2.png)
+![image-20231017143107426](assets/2.png)
 
 用户名：linaro
 
@@ -25,7 +25,7 @@
 
 然后安装SDK，在[算能官网](https://developer.sophgo.com/site/index/material/37/all.html)下载SDK-23.05.01：
 
-![690e63de1007e0ba6ba03a33eb73261](img/3.png)
+![690e63de1007e0ba6ba03a33eb73261](assets/3.png)
 
 下载好之后，请到`Release_230501-public.zip\Release_230501-public\sophon-sail_20230605_085400\sophon-sail_3.5.0.tar.gz\sophon-sail_3.5.0.tar\sophon-sail\python_wheels\soc\libsophon-0.4_sophonmw-0.6\py38\`路径下提取`sophon_arm-3.5.0-py3-none-any.whl`文件到AirBox上。
 
