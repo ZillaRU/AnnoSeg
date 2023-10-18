@@ -105,10 +105,9 @@ GitHub链接如下：https://github.com/ZillaRU/AnnoSeg
 
 安装依赖：`pip3 install -r requirements.txt`，运行`python3 app.py`，如果有包没安装pip安装即可，运行成功截图如下：
 
-![image-20231017151550017](img/4.png)
+![image-20231017151550017](assets/4.png)
 
 这里我的端口是7860，在浏览器中`192.168.150.1:7860`即可愉快的玩耍啦~
-> 如果打不开，app.py最后一行 改成demo.launch(ssl_verify=False, server_name="0.0.0.0")就可以了
 
 # 标注图片
 上传图片，选取需要标注的类别（可多选），点击Annotate，标注结果显示在右侧。
