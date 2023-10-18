@@ -1,0 +1,3 @@
+argparse
+gradio
+opencv_python_headless
