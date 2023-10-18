@@ -3,4 +3,3 @@ __pycache__
 *.pt
 *.mlir
 *.onnx
-*.png
