@@ -1,6 +1,8 @@
 ## YOLOv8 + MobileSAM在AirBox上实现自动标注
 
 本文档将介绍如何在AirBox部署YOLOv8 + MobileSAM程序，实现自动标注（图片或者视频）的功能。
+<img width="323" alt="框架" src="https://github.com/ZillaRU/AnnoSeg/assets/25343084/1f50c8f9-6c6d-4d2b-a3fe-dc14cd1f542d">
+<img width="1000" alt="71c652311960182dca42b0468ee8890" src="https://github.com/ZillaRU/AnnoSeg/assets/25343084/51a74953-7464-4e3f-b77e-d133ff50dd9e">
 
 ###  1、连接AirBox
 
@@ -112,6 +114,8 @@ GitHub链接如下：https://github.com/ZillaRU/AnnoSeg
 # 标注图片
 上传图片，选取需要标注的类别（可多选），点击Annotate，标注结果显示在右侧。
 ![image annotation](assets/image.png)
+
+
 
 # 标注视频
 上传视频，选取需要标注的类别（单选），点击Annotate，标注完成的视频在右侧可下载。
