@@ -290,7 +290,8 @@ def draw_label_masks(img, labels, all_masks, boxes=None, alpha=0.5):
 
         countours = binary_dilation(binary_mask,iterations=1) ^ binary_mask
         img_mask[countours, :] = 0
-        img_mask = cv2.putText(img_mask, label, (int(boxes[i][0]), int(boxes[i][1])), cv2.FONT_HERSHEY_COMPLEX, 2, color, 3)
+        if i == 0:
+            img_mask = cv2.putText(img_mask, label, (int((boxes[i][0]+boxes[i][2])/2), int((boxes[i][1]+boxes[i][3])/2)), cv2.FONT_HERSHEY_COMPLEX, 2, color, 2)
     return img_mask.astype(img.dtype)
 
 

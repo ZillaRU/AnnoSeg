@@ -1,8 +1,10 @@
-## YOLOv8 + MobileSAM在AirBox上实现自动标注
+## YOLOv8/GroundingDINO + MobileSAM在AirBox上实现自动标注
 
-本文档将介绍如何在AirBox部署YOLOv8 + MobileSAM程序，实现自动标注（图片或者视频）的功能。
+本文档将介绍如何在AirBox部署YOLOv8/GroundingDINO + MobileSAM程序，实现自动标注（图片或者视频）的功能。
 <img width="323" alt="框架" src="https://github.com/ZillaRU/AnnoSeg/assets/25343084/1f50c8f9-6c6d-4d2b-a3fe-dc14cd1f542d">
 <img width="1000" alt="71c652311960182dca42b0468ee8890" src="https://github.com/ZillaRU/AnnoSeg/assets/25343084/51a74953-7464-4e3f-b77e-d133ff50dd9e">
+![image annotation](assets/4157b8e3520a3fcd4f2fa121e13f12f.png)
+
 
 ###  1、连接AirBox
 
@@ -40,83 +42,25 @@ GitHub链接如下：https://github.com/ZillaRU/AnnoSeg
 
 将项目文件拷贝到AirBox的/data下。
 
-项目结构树如下：
-
-```
-.
-├── README.md
-├── app.py
-├── argparse3-0.0.0-py3-none-any.whl
-├── assets
-│   ├── image.png
-│   └── image1.png
-├── requirements.txt
-├── sam
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-38.pyc
-│   │   └── sam_demo_fast.cpython-38.pyc
-│   ├── sam_demo_fast.py
-│   └── sam_utils
-│       ├── __init__.py
-│       ├── __pycache__
-│       │   ├── __init__.cpython-38.pyc
-│       │   └── transforms.cpython-38.pyc
-│       └── transforms.py
-├── test_imgs
-│   ├── cat.jpg
-│   ├── picture1.jpg
-│   └── picture3.jpg
-├── test_videos
-│   ├── 10s_Trim.mp4
-│   └── dog_trim.mp4
-├── utils
-│   ├── __init__,py
-│   ├── __pycache__
-│   │   ├── tools.cpython-38.pyc
-│   │   └── tools_gradio.cpython-38.pyc
-│   ├── tools.py
-│   └── tools_gradio.py
-├── weight
-│   ├── mask_decoder.bmodel
-│   ├── mobilesam_encoder_hwc.bmodel
-│   ├── no_mask_embed_weight.npz
-│   ├── not_a_point_embed_weight.npz
-│   ├── point_embeddings.npz
-│   ├── positional_encoding_gaussian_matrix.npy
-│   └── sam_tinyvit_0915.bmodel
-└── yolov8
-    ├── BM1684X_models
-    │   ├── yolov8s_fp16_1b.bmodel
-    │   ├── yolov8s_fp32_1b.bmodel
-    │   ├── yolov8s_int8_1b.bmodel
-    │   └── yolov8s_int8_4b.bmodel
-    ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-38.pyc
-    │   ├── postprocess_numpy.cpython-38.pyc
-    │   ├── utils.cpython-38.pyc
-    │   └── yolov8_det_demo.cpython-38.pyc
-    ├── postprocess_numpy.py
-    ├── utils.py
-    └── yolov8_det_demo.py
-
-13 directories, 43 files
 ```
 ###  4、运行程序
 
-安装依赖：`pip3 install -r requirements.txt`，运行`python3 app.py`，如果有包没安装pip安装即可，运行成功截图如下：
+安装依赖：`pip3 install -r requirements.txt`，运行`python3 app.py --det_method groundingdino`（使用GroundingDINO作为检测方法）或 `python3 app.py --det_method yolov8s`。
+如果有包没安装pip安装即可，运行成功截图如下：
 
 ![image-20231017151550017](assets/4.png)
 
 这里我的端口是7860，在浏览器中`192.168.150.1:7860`即可愉快的玩耍啦~
 
-# 标注图片
+# YoloV8版 标注图片
 上传图片，选取需要标注的类别（可多选），点击Annotate，标注结果显示在右侧。
 ![image annotation](assets/image.png)
 
+# GroundingDINO版 标注图片
+上传图片，描述需要标注的物体，点击Annotate，标注结果显示在右侧。
+![image annotation](assets/4157b8e3520a3fcd4f2fa121e13f12f.png)
 
 
-# 标注视频
+# YoloV8版 标注视频
 上传视频，选取需要标注的类别（单选），点击Annotate，标注完成的视频在右侧可下载。
 ![video annotation](assets/image1.png)
