@@ -1,8 +1,11 @@
 ## YOLOv8/GroundingDINO + MobileSAM在AirBox上实现自动标注
 
 本文档将介绍如何在AirBox部署YOLOv8/GroundingDINO + MobileSAM程序，实现自动标注（图片或者视频）的功能。
+
 <img width="323" alt="框架" src="https://github.com/ZillaRU/AnnoSeg/assets/25343084/1f50c8f9-6c6d-4d2b-a3fe-dc14cd1f542d">
+
 <img width="1000" alt="71c652311960182dca42b0468ee8890" src="https://github.com/ZillaRU/AnnoSeg/assets/25343084/51a74953-7464-4e3f-b77e-d133ff50dd9e">
+
 ![image annotation](assets/4157b8e3520a3fcd4f2fa121e13f12f.png)
 
 
@@ -42,7 +45,6 @@ GitHub链接如下：https://github.com/ZillaRU/AnnoSeg
 
 将项目文件拷贝到AirBox的/data下。
 
-```
 ###  4、运行程序
 
 安装依赖：`pip3 install -r requirements.txt`，运行`python3 app.py --det_method groundingdino`（使用GroundingDINO作为检测方法）或 `python3 app.py --det_method yolov8s`。
